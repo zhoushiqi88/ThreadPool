@@ -1,0 +1,2 @@
+出现Debug Error abort() has been called 是因为主线程结束，其中的局部变量释放，然而线程中还在引用，导致异常。可以用future类的wait等待最晚
+入对的future可用，这里future是右值引用传递，如果不是右值引用会出错。
